@@ -1,15 +1,15 @@
-This is a dockerfile of Ubuntu 22.04 + Miniconda + JupyterLab
-
-'Dark' theme 
-'Auto Close Blackets' is enabled.
-
-Following extensions and packages are installed.
-jupyterlab-variableInspector
-black
-isort
-
-Numpy
-Pandas
-Matplotlib
-Seaborn
+This is a dockerfile of Ubuntu 22.04 + Miniconda + JupyterLab<br>
+<br>
+'Dark' theme<br> 
+'Auto Close Blackets' is enabled.<br>
+<br>
+Following extensions and packages are installed.<br>
+jupyterlab-variableInspector<br>
+black<br>
+isort<br>
+<br>
+Numpy<br>
+Pandas<br>
+Matplotlib<br>
+Seaborn<br>
 

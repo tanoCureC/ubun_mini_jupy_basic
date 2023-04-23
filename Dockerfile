@@ -43,12 +43,10 @@ RUN pip install --upgrade pip && \
     pip install pandas matplotlib seaborn && \
     rm -rf /root/.cache/pip
 
-# Dark mode
+# Enable Dark mode & 'Auto Close Brackets'
 RUN mkdir -p /root/.jupyter/lab/user-settings/@jupyterlab/apputils-extension && \
-    echo '{ "theme": "JupyterLab Dark" }' > /root/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
-
-# Enable 'Auto Close Brackets' as default
-RUN mkdir -p /root/.jupyter/lab/user-settings/@jupyterlab/notebook-extension && \
+    echo '{ "theme": "JupyterLab Dark" }' > /root/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings && \
+    mkdir -p /root/.jupyter/lab/user-settings/@jupyterlab/notebook-extension && \
     echo '{ "codeCellConfig": { "autoClosingBrackets": true } }' > /root/.jupyter/lab/user-settings/@jupyterlab/notebook-extension/tracker.jupyterlab-settings
 
 # Runtime stage
