@@ -25,18 +25,12 @@ ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
     PATH=/opt/miniconda3/bin:$PATH
 
-# Update conda, install jupyterlab, extensions (jupyterlab-variableInspector, black, isort)
+# Update conda, install jupyterlab, extensions (variableinspector)
 RUN conda update conda && \
     conda install -y jupyterlab && \
     conda clean -afy && \
     pip install lckr-jupyterlab-variableinspector && \
-    jupyter lab build && \
-    pip install black isort && \
-    jupyter labextension install @ryantam626/jupyterlab_code_formatter && \
-    pip install jupyterlab_code_formatter && \
-    jupyter serverextension enable --py jupyterlab_code_formatter && \
-    mkdir -p /root/.jupyter/lab/user-settings/@ryantam626/jupyterlab_code_formatter && \
-    echo '{ "default_formatter": "black" }' > /root/.jupyter/lab/user-settings/@ryantam626/jupyterlab_code_formatter/settings.jupyterlab-settings
+    jupyter lab build
 
 # Upgrade pip and install required Python packages
 RUN pip install --upgrade pip && \
